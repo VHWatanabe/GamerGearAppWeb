@@ -1,0 +1,81 @@
+﻿@page
+@model GamerGearAppWeb.Pages.InclusaoModel
+@{
+}
+
+<div class = "include-form">
+    <form method="post">
+        <h1>Inclusão de Produto</h1>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-field">
+            <label asp-for="Periferico.Nome" class="form-label"></label><br />
+            <input asp-for="Periferico.Nome" class="form-input" />
+            <span asp-validation-for="Periferico.Nome" class="text-danger"></span>
+        </div>
+
+        <div class="form-field">
+            <label asp-for="Periferico.Descricao" class="form-label"></label><br />
+            <input asp-for="Periferico.Descricao" class="form-input" type="text" />
+            <span asp-validation-for="Periferico.Descricao" class="text-danger"></span>
+        </div>
+
+        <div class="form-field">
+            <label asp-for="Periferico.Imagem" class="form-label"></label><br />
+            <input asp-for="Periferico.Imagem" class="form-input" type="text" />
+            <span asp-validation-for="Periferico.Imagem" class="text-danger"></span>
+        </div>
+
+        <div class="form-field">
+            <label asp-for="Periferico.Preco" class="form-label"></label><br />
+            <input asp-for="Periferico.Preco" class="form-input" type="number" />
+            <span asp-validation-for="Periferico.Preco" class="text-danger"></span>
+        </div>
+
+        <div class="form-field">
+            <label asp-for="Periferico.Cor" class="form-label"></label><br />
+            <input asp-for="Periferico.Cor" class="form-input" type="text" />
+            <span asp-validation-for="Periferico.Cor" class="text-danger"></span>
+        </div>
+
+        <div class="form-field">
+            <label asp-for="Periferico.Marca" class="form-label"></label><br />
+            <input asp-for="Periferico.Marca" class="form-input" type="text" />
+            <span asp-validation-for="Periferico.Marca" class="text-danger"></span>
+        </div>
+
+        <div class="form-field">
+            <label asp-for="Periferico.Peso" class="form-label"></label><br />
+            <input asp-for="Periferico.Peso" class="form-input" type="text" />
+            <span asp-validation-for="Periferico.Peso" class="text-danger"></span>
+        </div>
+
+        <div class="form-field">
+            <input asp-for="Periferico.EntregaGratis" class="form-checkbox" type="checkbox" />
+            <label asp-for="Periferico.EntregaGratis" class="form-label"></label>
+            <span asp-validation-for="Periferico.EntregaGratis" class="text-danger"></span>
+        </div>
+
+        <div class="form-field">
+            <label asp-for="Periferico.PrecoValido" class="form-label"></label><br />
+            <input asp-for="Periferico.PrecoValido" id="form-month-input" class="form-input" type="month" />
+            <span asp-validation-for="Periferico.PrecoValido" class="text-danger"></span>
+        </div>
+
+        <div class="form-field">
+            <label asp-for="Periferico.Estoque" class="form-label"></label><br />
+            <input asp-for="Periferico.Estoque" class="form-input" type="text" />
+            <span asp-validation-for="Periferico.Estoque" class="text-danger"></span>
+        </div>
+
+        <div class="form-field">
+            <input type="submit" value="Salvar" class="form-button" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

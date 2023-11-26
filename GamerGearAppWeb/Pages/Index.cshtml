@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home - Gamer Gear";
+}
+
+@if (TempData["TempMensagemSucesso"] != null)
+{
+    <div class="alert-success" role="alert">
+        <h4 class="alert-msg">Sucesso!</h4>
+        <p>Operação realizada com sucesso!</p>
+    </div>
+}
+
+<div class="text-center">
+
+    @foreach (var item in Model.ListaProduto)
+    {
+        <div class="card">
+            <img src="@item.Imagem" class="card-img" />
+            <div class="card-text">
+                <h5>@item.Nome</h5>
+                <p>R$ @item.Preco</p>
+            </div>
+            <a class="card-detail" asp-page="/Detalhes" asp-route-id="@item.PerifericoId" asp-route-slug="@item.NomeSlug">Detalhes</a>
+        </div>
+    }
+</div>
