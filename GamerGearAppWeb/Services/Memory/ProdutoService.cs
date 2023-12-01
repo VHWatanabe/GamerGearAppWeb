@@ -1,5 +1,6 @@
-﻿using GamerGearAppWeb.Models;
-namespace GamerGearAppWeb.Services;
+﻿using GamerGearAppWeb.models;
+using GamerGearAppWeb.Models;
+namespace GamerGearAppWeb.Services.Memory;
 
 public class ProdutoService : IProdutoService
 {
@@ -162,7 +163,6 @@ public class ProdutoService : IProdutoService
         produtoEncontrado.Nome = produto.Nome;
         produtoEncontrado.Descricao = produto.Descricao;
         produtoEncontrado.Imagem = produto.Imagem;
-        produtoEncontrado.Imagem = produto.Imagem;
         produtoEncontrado.Cor = produto.Cor;
         produtoEncontrado.Marca = produto.Marca;
         produtoEncontrado.EntregaGratis = produto.EntregaGratis;
@@ -175,5 +175,20 @@ public class ProdutoService : IProdutoService
         var produtoEncontrado = Obter(id);
         _produtos.Remove(produtoEncontrado);
 
+    }
+
+    public IList<Marca> ObterTodasMarcas()
+    {
+        return new List<Marca>()
+            {
+                new Marca() {Descricao = "Corsair"},
+                new Marca() {Descricao = "HyperX"},
+                new Marca() {Descricao = "Zowie"},
+                new Marca() {Descricao = "Logitech"},
+                new Marca() {Descricao = "FalleN"},
+                new Marca() {Descricao = "FalleN"},
+                new Marca() {Descricao = "Razer"},
+                new Marca() {Descricao = "Redragon"},
+            };
     }
 }

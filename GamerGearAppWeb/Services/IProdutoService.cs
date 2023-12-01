@@ -1,4 +1,5 @@
-﻿using GamerGearAppWeb.Models;
+﻿using GamerGearAppWeb.models;
+using GamerGearAppWeb.Models;
 
 namespace GamerGearAppWeb.Services;
 
@@ -9,4 +10,5 @@ public interface IProdutoService
     void Incluir(Periferico periferico);
     void Alterar(Periferico periferico);
     void Excluir(int id);
+    IList<Marca> ObterTodasMarcas();
 }

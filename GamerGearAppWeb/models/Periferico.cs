@@ -49,4 +49,6 @@ public class Periferico
 
     [Required(AllowEmptyStrings = false, ErrorMessage = "Campo 'Estoque' é obrigatório.")]
     public int Estoque { get; set; }
+
+    public int? MarcaId { get; set; }
 }

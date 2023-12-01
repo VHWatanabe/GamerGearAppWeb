@@ -1,11 +1,12 @@
 using GamerGearAppWeb.Data;
 using GamerGearAppWeb.Services;
+using GamerGearAppWeb.Services.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<IProdutoService, ProdutoService>();
+builder.Services.AddTransient<IProdutoService, ProdutoService>();
 
 builder.Services.AddDbContext<GamerGearDbContext>();
 

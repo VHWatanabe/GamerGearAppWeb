@@ -39,8 +39,10 @@
         </div>
 
         <div class="form-field">
-            <label asp-for="Periferico.Marca" class="form-label"></label><br />
-            <input asp-for="Periferico.Marca" class="form-input" type="text" />
+            <label asp-for="Periferico.MarcaId" class="form-label"></label><br />
+            <select class="form-input" asp-for="Periferico.MarcaId" asp-items="Model.MarcaOptionItems">
+                <option value="">Selecione uma marca</option>
+            </select>
             <span asp-validation-for="Periferico.Marca" class="text-danger"></span>
         </div>
 

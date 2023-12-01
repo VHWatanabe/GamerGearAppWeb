@@ -1,4 +1,5 @@
-﻿using GamerGearAppWeb.Models;
+﻿using GamerGearAppWeb.models;
+using GamerGearAppWeb.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GamerGearAppWeb.Data;
@@ -6,6 +7,7 @@ namespace GamerGearAppWeb.Data;
 public class GamerGearDbContext : DbContext
 {
     public DbSet<Periferico> Periferico { get; set; }
+    public DbSet<Marca> Marca { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -16,6 +18,6 @@ public class GamerGearDbContext : DbContext
 
         string conn = config.GetConnectionString("Conn");
         
-        optionsBuilder.UseSqlServer("");
+        optionsBuilder.UseSqlServer(conn);
     }
 }
