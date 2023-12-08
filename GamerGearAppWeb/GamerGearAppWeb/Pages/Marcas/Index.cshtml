@@ -1,0 +1,35 @@
+﻿@page
+@model GamerGearAppWeb.Pages.Marcas.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Marcas</h1>
+
+<p><a class="marca-botao" asp-page="Create">Adicionar</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="2">
+                <h4>@Html.DisplayNameFor(model => model.Marca[0].Descricao)</h4>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Marca) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                <a class="marca-crud" id="marca-editar" asp-page="./Edit" asp-route-id="@item.MarcaId">Editar</a> |
+                <a class="marca-crud" id="marca-detalhes" asp-page="./Details" asp-route-id="@item.MarcaId">Detalhes</a> |
+                <a class="marca-crud" id="marca-excluir" asp-page="./Delete" asp-route-id="@item.MarcaId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

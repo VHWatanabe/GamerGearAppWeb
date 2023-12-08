@@ -1,0 +1,34 @@
+﻿@page "/produto/{slug}/{id}"
+@model GamerGearAppWeb.Pages.DetalhesModel
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1 class="detail-nome">@Model.Periferico.Nome</h1>
+
+<div class="detail-body">
+
+    <img class="detail-img" src="@Model.Periferico.Imagem" />
+
+    <div class="detail-info">
+        <h4>Descrição</h4>
+        <p>@Model.Periferico.Descricao</p>
+        <h4>Especificações</h4>
+        <ul>
+            <li><label asp-for="Periferico.Preco"></label>: @Html.DisplayFor(model => model.Periferico.Preco)</li>
+            <li><label asp-for="Periferico.Cor"></label>: @Model.Periferico.Cor</li>
+            @if(Model.Marca is not null)
+            {
+                <li><label asp-for="Periferico.MarcaId"></label>: @Html.DisplayFor(model => model.Marca.Descricao)</li>
+            }
+            <li><label asp-for="Periferico.Peso"></label>: @Model.Periferico.Peso</li>
+            <li><label asp-for="Periferico.EntregaGratis"></label>: @Model.Periferico.EntregaGratisFormatada</li>
+            <li><label asp-for="Periferico.PrecoValido"></label>: @Html.DisplayFor(model => model.Periferico.PrecoValido)</li>
+            <li><label asp-for="Periferico.Estoque"></label>: @Model.Periferico.Estoque</li>
+        </ul>
+        @if(User.Identity.IsAuthenticated)
+        {
+            <a class="detail-edit" asp-page="/Edicao" asp-route-id="@Model.Periferico.PerifericoId">Editar</a>
+        }
+    </div>
+</div>
